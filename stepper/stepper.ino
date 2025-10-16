@@ -1,26 +1,28 @@
 #include <AccelStepper.h>
 
-const int xdirPin  = 4;     // 方向控制引脚
-const int xstepPin = 5;    // 步进控制引脚
-const int ydirPin  = 8;     // 方向控制引脚
-const int ystepPin = 9;    // 步进控制引脚
-const int xmoveSteps = 300;     // 运行步数
-const int ymoveSteps = 1000;    // 运行步数
+// 步进电机引脚配置
+const int xdirPin  = 4;       // x方向控制引脚
+const int xstepPin = 5;       // x步进控制引脚
+const int ydirPin  = 8;       // y方向控制引脚
+const int ystepPin = 9;       // y步进控制引脚
+const int xmoveSteps = 300;   // x运行步数
+const int ymoveSteps = 1000;  // y运行步数
 
 #define CIRCLE_Puls  1600
 
 AccelStepper stepperX(1, xstepPin, xdirPin);  // 建立步进电机对象
 AccelStepper stepperY(2, ystepPin, ydirPin);
 
-int center_x = 415;
+int center_x = 415;  // 中心默认坐标
 int center_y = 235;
-int error_X = 0;
+int error_X = 0;     // 默认坐标误差
 int error_Y = 0;
 
 // 按键引脚定义
 #define BUTTON1_PIN 2
 #define BUTTON2_PIN 3
 
+// 任务状态机1
 enum States {
   STOP,
   LEFT,
@@ -28,6 +30,7 @@ enum States {
   GOGOGO
 } State = STOP;
 
+// 任务状态机2
 enum BackStates {
   JUDGE,
   UP,

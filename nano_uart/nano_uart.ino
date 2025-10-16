@@ -2,7 +2,7 @@
 int x = 0, y = 0;
 
 void setup() {
-  Serial.begin(115200);    // 硬件串口用于打印
+  Serial.begin(115200);  // 硬件串口用于打印
 }
 
 void loop() {
@@ -20,9 +20,7 @@ void loop() {
         x = data.substring(left, comma).toInt();
         y = data.substring(comma + 1, right).toInt();
         // 打印接收的坐标
-        Serial.print(x);
-        Serial.print(",");
-        Serial.println(y);
+        Serial.print(x); Serial.print(","); Serial.println(y);
       }
     }
   }
