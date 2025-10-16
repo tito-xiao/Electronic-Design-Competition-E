@@ -4,7 +4,7 @@
 
 SHELL = cmd.exe
 
-CG_TOOL_ROOT := E:/Code Composer Studio/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS
+CG_TOOL_ROOT := D:/Software/Electronic/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS
 
 GEN_OPTS__FLAG := @"./device.opt" 
 GEN_CMDS__FLAG := -Wl,-l"./device_linker.cmd" 
@@ -142,7 +142,7 @@ all: $(OBJS) $(GEN_CMDS)
 731ccs.out: $(OBJS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"E:/Code Composer Studio/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wl,-m"731ccs.map" -Wl,-i"E:/Code Composer Studio/mspm0_sdk_2_05_01_00/source" -Wl,-i"E:/Code Composer Studio/Project/412" -Wl,-i"E:/Code Composer Studio/Project/412/Debug/syscfg" -Wl,-i"E:/Code Composer Studio/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="731ccs_linkInfo.xml" -Wl,--rom_model -o "731ccs.out" $(ORDERED_OBJS)
+	"D:/Software/Electronic/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/bin/tiarmclang.exe" @"device.opt"  -march=thumbv6m -mcpu=cortex-m0plus -mfloat-abi=soft -mlittle-endian -mthumb -O2 -gdwarf-3 -Wl,-m"731ccs.map" -Wl,-i"D:/Software/Electronic/ti/ccs2020/mspm0_sdk_2_05_01_00/source" -Wl,-i"C:/Users/xiao/Desktop/电子设计竞赛/代码/412" -Wl,-i"C:/Users/xiao/Desktop/电子设计竞赛/代码/412/Debug/syscfg" -Wl,-i"D:/Software/Electronic/ti/ccs2020/ccs/tools/compiler/ti-cgt-armllvm_4.0.3.LTS/lib" -Wl,--diag_wrap=off -Wl,--display_error_number -Wl,--warn_sections -Wl,--xml_link_info="731ccs_linkInfo.xml" -Wl,--rom_model -o "731ccs.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
